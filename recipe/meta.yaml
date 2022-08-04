@@ -1,5 +1,5 @@
 {% set name = "magentropy" %}
-{% set version = "0.1.2" %}
+{% set version = "0.1.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/magentropy-{{ version }}.tar.gz
-  sha256: 8a044ea7487e7d821d8eff750af7212e4903e4ec8aea14746499318dafa68b60
+  sha256: 82e2f29ace8080467f74b41b2425738441360a46b428983f994d7e3523bbb744
 
 build:
   skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -28,7 +28,6 @@ requirements:
     - pint-pandas >=0.2
     - python
     - scipy >=1.7.3
-    - tomli >=2.0.1  # [py<311]
 
 test:
   imports:
